@@ -59,6 +59,20 @@ Filter _$FilterFromJson(Map<String, dynamic> json) {
   );
 }
 
+Map<String, dynamic> _$RangeToJson(Range instance) => <String, dynamic>{
+      'set': instance.setOnly,
+      'start': instance.start,
+      'end': instance.end,
+    };
+
+Range _$RangeFromJson(Map<String, dynamic> json) {
+  return Range(
+    json['set'],
+    json['start'],
+    json['end'],
+  );
+}
+
 Map<String, dynamic> _$FilterToJson(Filter instance) => <String, dynamic>{
       'collection': instance.arrayOrSet,
       'filter': instance.lambda,

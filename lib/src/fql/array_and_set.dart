@@ -102,6 +102,26 @@ class Filter extends Expr {
 }
 
 @JsonSerializable()
+class Range extends Expr {
+  @JsonKey(name: 'set')
+  final Object setOnly;
+
+  @JsonKey(name: 'start')
+  final Object start;
+
+  @JsonKey(name: 'end')
+  final Object end;
+
+  Range(this.setOnly, this.start, this.end);
+
+  factory Range.fromJson(Map<String, dynamic> json) =>
+      _$RangeFromJson(json);
+
+  @override
+  Map<String, dynamic> toJson() => _$RangeToJson(this);
+}
+
+@JsonSerializable()
 class Foreach extends Expr {
   @JsonKey(name: 'foreach')
   final Object array_or_page;

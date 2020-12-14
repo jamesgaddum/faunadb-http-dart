@@ -181,9 +181,11 @@ class IsNonEmpty extends Expr {
 
 @JsonSerializable()
 class Join extends Expr {
-  @JsonKey(name: 'join')
+  
+  @JsonKey(name: 'source')
   final Object source;
 
+  @JsonKey(name: 'detail')
   final Object detail;
 
   Join(this.source, this.detail);

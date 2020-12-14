@@ -5,7 +5,7 @@ import 'dart:convert';
 /// It is recommended to use [FaunaConfig.build] to build a configuration.
 class FaunaConfig {
   /// Query API Version to target.
-  static const APIVersion = 2.7;
+  static const APIVersion = '2.12.0';
 
   /// FaunaDB secret.
   final String secret;
@@ -73,7 +73,7 @@ class FaunaConfig {
 
     reqHeaders.putIfAbsent(
       'X-FaunaDB-API-Version',
-      () => FaunaConfig.APIVersion.toString(),
+      () => FaunaConfig.APIVersion,
     );
 
     if (queryTimeout != null) {
